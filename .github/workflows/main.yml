@@ -1,25 +1,23 @@
 name: dragon-replay
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "10 7 * * 1-5"
+  workflow_dispatch:  # 手动触发运行
 
 jobs:
   run:
     runs-on: ubuntu-latest
-
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4  # 这里升级到了 v4
 
-    - name: setup python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.10"
+      - name: Set up Python
+        uses: actions/setup-python@v5  # 这里升级到了 v5
+        with:
+          python-version: '3.10'
 
-    - name: install
-      run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install requests pandas
 
-    - name: run
-      run: python main.py
+      - name: Run script
+        run: python main.py
