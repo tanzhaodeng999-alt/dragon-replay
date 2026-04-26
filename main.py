@@ -1,8 +1,6 @@
-import requests
 from replay import send
 
-# 这是一个简单的测试逻辑
-print("正在启动龙头识别系统测试...")
-send("🚀 信号接通！GitHub 云端任务运行成功。")
-print("消息已发送，请检查企业微信。")
-
+if __name__ == "__main__":
+    print("开始测试推送...")
+    send("✅ 恭喜！你的龙头系统逻辑已完全打通！")
+    print("指令已发出")
