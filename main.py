@@ -1,25 +1,8 @@
-name: dragon-replay
+import requests
+from replay import send
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "10 7 * * 1-5"
+# 这是一个简单的测试逻辑
+print("正在启动龙头识别系统测试...")
+send("🚀 信号接通！GitHub 云端任务运行成功。")
+print("消息已发送，请检查企业微信。")
 
-jobs:
-  run:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: checkout
-      uses: actions/checkout@v3
-
-    - name: setup python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10"
-
-    - name: install
-      run: pip install -r requirements.txt
-
-    - name: run
-      run: python main.py
